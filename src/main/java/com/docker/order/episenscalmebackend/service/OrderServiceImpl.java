@@ -21,7 +21,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public ResponseEntity<String> getStringResponseEntity(String text) {
         try {
-            File file = new File(/*"/home/docker/project/data/order.txt"*/"../order.txt");
+            File file = new File(/*"/home/docker/project/data/order.txt"*/"order.txt");
             if (!file.exists()) {
                 file.createNewFile();
             }

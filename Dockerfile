@@ -11,15 +11,12 @@ LABEL version="3.0"
 # Refer to Maven build -> finalName
 ARG JAR_FILE=target/episen-sca-lme-backend-0.0.1-SNAPSHOT.jar
 
-RUN mkdir -p /app
-
 # cd /app
-WORKDIR /app
-
-RUN chmod +x /app
+WORKDIR home/app
 
 # cp target/episen-sca-lme-backend-0.0.1-SNAPSHOT/app/app.jar
 COPY ${JAR_FILE} app.jar
 
+EXPOSE 8080
 # java -jar /app/app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
